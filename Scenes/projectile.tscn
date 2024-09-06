@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqu56v5nxds3e"]
+
+[ext_resource type="Texture2D" uid="uid://bjhl400sn6uu5" path="res://Assets/Player projectiles.png" id="1_1fhdd"]
+[ext_resource type="Script" path="res://Scenes/projectile.gd" id="1_qadh4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0a7rd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsiny"]
+atlas = ExtResource("1_1fhdd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmh7e"]
+atlas = ExtResource("1_1fhdd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s3kr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsiny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmh7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="Area2D" groups=["Projectile"]]
+script = ExtResource("1_qadh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0a7rd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3s3kr")

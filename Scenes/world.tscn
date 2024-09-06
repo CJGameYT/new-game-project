@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwwfukvkjira0"]
+
+[ext_resource type="Script" path="res://Scenes/background.gd" id="1_7bgmf"]
+[ext_resource type="Texture2D" uid="uid://doa2gw1dopq30" path="res://Assets/Skybox Pyramid outside.png" id="1_fpovo"]
+[ext_resource type="PackedScene" uid="uid://bdl7ppgldl6rd" path="res://Scenes/player.tscn" id="3_sh8pd"]
+[ext_resource type="PackedScene" uid="uid://dougektdteo3s" path="res://skull_head.tscn" id="4_bkqma"]
+
+[node name="WORLD" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_7bgmf")
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 2731.0
+offset_bottom = 240.0
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("1_fpovo")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_sh8pd")]
+position = Vector2(40, 151)
+
+[node name="SkullHead" parent="." instance=ExtResource("4_bkqma")]
+position = Vector2(571, 142)
+
+[node name="SkullHead2" parent="." instance=ExtResource("4_bkqma")]
+position = Vector2(766, 79)
+
+[node name="SkullHead3" parent="." instance=ExtResource("4_bkqma")]
+position = Vector2(770, 246)
+
+[node name="SkullHead4" parent="." instance=ExtResource("4_bkqma")]
+position = Vector2(961, 152)
